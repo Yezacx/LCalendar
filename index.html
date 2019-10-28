@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LCalendar移动端时间插件</title>
+    <link rel="stylesheet" href="./css/LCalendar.css">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        input {
+            width: 90%;
+            height: 40px;
+            font-size: 18px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 20px auto;
+            padding: 5px;
+            display:block;
+            outline:none;//去除选中状态边框
+        }
+        h1 {
+            background-color: #b72f60;
+            color: #fff;
+            font-size: 25px;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <h1>LCalendar移动端日期时间选择</h1>
+        <input id="demo1" type="text" readonly="" placeholder="日期选择" data-lcalendar="2019-10-28,2019-10-28" />
+        <input id="demo2" type="text" readonly="" placeholder="日期和时间选择" value="2019-10-28 10:44" data-lcalendar="2019-10-28,2019-10-28" />
+        <input id="demo3" type="text" readonly="" placeholder="时间选择" />
+        <input id="demo4" type="text" readonly="" placeholder="年月选择" />
+    </div>
+</div>
+
+<script src="./js/LCalendar.js"></script>
+<script>
+    var calendar = new LCalendar();
+    calendar.init({
+        'trigger': '#demo1', //标签id
+        'type': 'date', // 调出日期选择date;  调出日期时间选择datetime;  调出时间选择time;  调出年月选择ym。
+        'minDate': '1970-1-1', //最小日期 注意：该值会覆盖标签内定义的日期范围
+        'maxDate': '2050-1-1' //最大日期  注意：该值会覆盖标签内定义的日期范围
+    });
+    var calendardatetime = new LCalendar();
+    calendardatetime.init({
+        'trigger': '#demo2',
+        'type': 'datetime'
+    });
+    var calendartime = new LCalendar();
+    calendartime.init({
+        'trigger': '#demo3',
+        'type': 'time'
+    });
+    var calendarym = new LCalendar();
+    calendarym.init({
+        'trigger': '#demo4',
+        'type': 'ym',
+        'minDate': '1900-1',
+        'maxDate': new Date().getFullYear() + '-' + (new Date().getMonth() + 1)
+    });
+</script>
+</body>
+</html>
