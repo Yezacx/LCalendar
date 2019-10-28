@@ -4,6 +4,12 @@
    <input id="demo1" type="text" readonly="" placeholder="日期选择" data-lcalendar="2019-10-28,2019-10-28" />
    ```
 #### 引入LCalendar.css和LCalendar.js
+   ```
+   <link rel="stylesheet" href="./css/LCalendar.css">
+   ```
+   ```
+   <script src="./js/LCalendar.js"></script>
+   ```
 #### 初始化插件
    ```
    var calendar = new LCalendar();
