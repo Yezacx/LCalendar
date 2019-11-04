@@ -1,4 +1,4 @@
-# LCalendar移动端时间插件
+## LCalendar移动端时间插件
 #### 页面中引入input标签，通过自定义属性data-lcalendar控制最小日期和最大日期，id名称与调用时一致
    ```
    <input id="demo1" type="text" readonly="" placeholder="日期选择" data-lcalendar="2019-10-28,2019-10-28" />
